@@ -1,28 +1,61 @@
 {
-  "name": "keyrun3",
-  "description": "Testing tea Protocol",
-  "version": "0.1.0",
-  "author": "TeaProtocolTester",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/keyrun3.git"
-  },
-  "keywords": [
-    "tea protocol",
-    "testing",
-    "blockchain",
-    "crypto"
+  "leafs": [
+    {
+      "name": "leaf1",
+      "role": "leaf",
+      "interfaces": ["eth1/1", "eth1/2", "eth1/3"]
+    },
+    {
+      "name": "leaf2",
+      "role": "leaf",
+      "interfaces": ["eth1/1", "eth1/2", "eth1/3"]
+    },
+    {
+      "name": "leaf3",
+      "role": "leaf",
+      "interfaces": ["eth1/1", "eth1/2", "eth1/3"]
+    }
   ],
-  "dependencies": {
-    "tea-protocol-library": "^1.0.0",
-    "testing-library": "^2.1.3"
+  "spines": [
+    {
+      "name": "spine1",
+      "role": "spine",
+      "interfaces": ["eth1/1", "eth1/2", "eth1/3"]
+    },
+    {
+      "name": "spine2",
+      "role": "spine",
+      "interfaces": ["eth1/1", "eth1/2", "eth1/3"]
+    }
+  ],
+  "bridgeDomain": {
+    "name": "myBridgeDomain",
+    "description": "Bridge domain for ACI network",
+    "subnet": "192.168.1.0/24",
+    "vrf": "myVRF"
   },
-  "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+  "endpointGroups": [
+    {
+      "name": "myEPG1",
+      "description": "Endpoint Group 1",
+      "bridgeDomain": "myBridgeDomain",
+      "interfaces": ["eth1/1", "eth1/2"]
+    },
+    {
+      "name": "myEPG2",
+      "description": "Endpoint Group 2",
+      "bridgeDomain": "myBridgeDomain",
+      "interfaces": ["eth1/3"]
+    }
+  ],
+  "vrf": {
+    "name": "myVRF",
+    "description": "Virtual Routing and Forwarding",
+    "tenant": "myTenant"
   },
-  "devDependencies": {
-    "jest": "^27.0.0"
+  "tenant": {
+    "name": "myTenant",
+    "description": "My ACI Tenant"
   }
 }
+
