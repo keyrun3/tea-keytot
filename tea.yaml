@@ -1,0 +1,6 @@
+#https://github.com/keyrun3/tea-keytot/blob/main/package.json
+---
+version: 1.0.0
+codeOwners:
+  - '0x2d617ef8a5957c9ca7dD7050B65a68012262B675'
+quorum: 1
